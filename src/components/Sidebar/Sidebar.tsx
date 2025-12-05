@@ -3,7 +3,7 @@ import styles from "./Sidebar.module.css";
 import { TbEdit } from "react-icons/tb";
 
 import botailogo from "../../assets/botailogo.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -11,10 +11,6 @@ interface SidebarProps {
 
 const Sidebar = ({ isOpen }: SidebarProps) => {
   const navigate = useNavigate();
-
-  function handleClick() {
-    navigate("/history");
-  }
 
   function handleNewChat() {
     navigate("/");
@@ -27,13 +23,16 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
           <img src={botailogo} alt="Bot Logo" className={styles.logo} />
         </div>
 
-        <h2>New Chat</h2>
+        <Link to="/" className={styles.heading}>
+          <h2>New Chat</h2>
+        </Link>
+
         <TbEdit size={30} onClick={handleNewChat} className={styles.edit} />
       </div>
 
-      <button className={styles.button} onClick={handleClick}>
+      <Link to="/history" className={styles.button}>
         Past Conversations
-      </button>
+      </Link>
     </aside>
   );
 };

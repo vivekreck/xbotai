@@ -101,7 +101,7 @@ input:focus {
   display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .logoHeading {
     margin-left: 10px;
   }

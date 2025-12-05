@@ -40,8 +40,10 @@ const History = () => {
         ))}
 
         <div className={styles.inputRow}>
-          <input className={styles.input} placeholder="Type here..." />
-          <button className={styles.askBtn}>Ask</button>
+          <input className={styles.input} placeholder="Message Bot AI..." name="Message Bot AI" />
+          <button className={styles.askBtn} type="submit" aria-label="Ask question">
+            Ask
+          </button>
           <button className={styles.saveBtn}>Save</button>
         </div>
       </div>

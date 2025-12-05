@@ -24,6 +24,7 @@
 }
 
 .button {
+  display: inline-block;
   width: 80%;
   padding: 12px;
   margin: 20px 10%;
@@ -33,6 +34,14 @@
   font-size: 16px;
   cursor: pointer;
   font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+}
+
+.heading {
+  text-decoration: none;
+  color: inherit;
 }
 
 .logoWrapper {
@@ -62,14 +71,14 @@
   cursor: pointer;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
   .sidebar {
     transform: translateX(0) !important;
     display: block !important;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .sidebar {
     width: 70%;
     position: fixed;

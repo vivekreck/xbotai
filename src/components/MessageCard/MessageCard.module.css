@@ -45,7 +45,8 @@
   text-align: start;
 }
 
-.content strong {
+.content strong,
+.contentHeading {
   font-weight: 800;
 }
 

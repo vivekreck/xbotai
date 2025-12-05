@@ -31,7 +31,7 @@ const Home = () => {
   const [inputValue, setInputValue] = useState("");
 
   const handleBackdropClick = () => {
-    if (window.innerWidth <= 1024 && isSidebarOpen) {
+    if (window.innerWidth <= 768 && isSidebarOpen) {
       toggleSidebar();
     }
   };
@@ -65,6 +65,18 @@ const Home = () => {
         minute: "2-digit",
       }),
     });
+  };
+
+  const handleSave = () => {
+    if (!chat) return;
+
+    const savedChats = JSON.parse(localStorage.getItem("savedChats") || "[]");
+
+    const exists = savedChats.find((c: { chatId: string }) => c.chatId === chatId);
+    if (!exists) {
+      savedChats.push(chat);
+      localStorage.setItem("savedChats", JSON.stringify(savedChats));
+    }
   };
 
   return (
@@ -110,18 +122,26 @@ const Home = () => {
               ))}
           </div>
 
-          <div className={styles.inputRow}>
+          <form
+            className={styles.inputRow}
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleAsk();
+            }}
+          >
             <input
               className={styles.input}
-              placeholder="Type here..."
+              placeholder="Message Bot AI..."
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />
-            <button className={styles.askBtn} onClick={handleAsk}>
+            <button className={styles.askBtn} type="submit" aria-label="Ask question">
               Ask
             </button>
-            <button className={styles.saveBtn}>Save</button>
-          </div>
+            <button className={styles.saveBtn} type="button" onClick={handleSave}>
+              Save
+            </button>
+          </form>
         </div>
       </div>
     </div>

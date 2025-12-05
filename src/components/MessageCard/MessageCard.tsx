@@ -32,7 +32,7 @@ const MessageCard: React.FC<Props> = ({ sender, text, time, messageId, chatId, f
       </div>
 
       <div className={styles.content}>
-        <strong>{sender === "user" ? "You" : "Soul AI"}</strong>
+        <span className={styles.contentHeading}>{sender === "user" ? "You" : "Soul AI"}</span>
 
         <p className={styles.message}>{text}</p>
 

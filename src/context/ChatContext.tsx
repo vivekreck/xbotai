@@ -73,8 +73,10 @@ const reducer = (state: State, action: Action): State => {
 };
 
 export const ChatProvider = ({ children }: { children: ReactNode }) => {
+  const savedChats = JSON.parse(localStorage.getItem("savedChats") || "[]");
+
   const [state, dispatch] = useReducer(reducer, {
-    chats: [],
+    chats: savedChats,
     activeChatId: null,
   });
 
