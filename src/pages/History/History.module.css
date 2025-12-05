@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  background: var(--color-secondary-200);
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.main h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: var(--border-width) solid var(--text-light);
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border: var(--border-width) solid var(--text-dark);
+  box-shadow: none;
+}
+
+.askBtn,
+.saveBtn {
+  padding: 12px 26px;
+  background: var(--color-secondary-100);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: larger;
+  font-weight: 600;
+}

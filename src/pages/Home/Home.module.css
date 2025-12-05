@@ -1,0 +1,133 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background: var(--color-secondary-200);
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.logoHeading {
+  color: var(--color-primary-100);
+  margin-left: 50px;
+}
+
+.title {
+  font-size: 32px;
+  margin-top: 80px;
+  font-weight: 700;
+}
+
+.logoWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  width: 200%;
+  height: auto;
+  object-fit: cover;
+}
+
+.promptList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 40px auto;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: var(--border-width) solid var(--text-light);
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border: var(--border-width) solid var(--text-dark);
+  box-shadow: none;
+}
+
+.askBtn,
+.saveBtn {
+  padding: 12px 26px;
+  background: var(--color-secondary-100);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.menuButton {
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--color-primary-100);
+  font-weight: 600;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .logoHeading {
+    margin-left: 10px;
+  }
+
+  .menuButton {
+    display: inline;
+  }
+
+  .promptList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+  }
+
+  .askBtn,
+  .saveBtn {
+    padding: 0 12px;
+    background: var(--color-secondary-100);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: smaller;
+    font-weight: 600;
+  }
+
+  .main {
+    padding: 20px;
+  }
+}

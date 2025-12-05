@@ -1,0 +1,82 @@
+.sidebar {
+  width: 320px;
+  background: white;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+  transition: transform 0.3s ease;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-secondary-100);
+  padding: 0 20px;
+}
+
+.header h2 {
+  font-weight: 400;
+}
+
+.menu {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.button {
+  width: 80%;
+  padding: 12px;
+  margin: 20px 10%;
+  border-radius: 12px;
+  background-color: var(--color-secondary-100);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.logoWrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  width: 420%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Sidebar default for mobile/tablet: HIDDEN */
+.closed {
+  transform: translateX(-100%);
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.edit {
+  cursor: pointer;
+}
+
+@media (min-width: 1025px) {
+  .sidebar {
+    transform: translateX(0) !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 70%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    display: block;
+    z-index: 1000;
+  }
+}
